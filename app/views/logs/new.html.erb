@@ -1,0 +1,22 @@
+<div class="container p-5">
+  <h1 class="mb-3">Novo log</h1>
+</div>
+
+<%= turbo_frame_tag Log.new do %>
+  <% if @log.errors.any? %>
+    <%= @log.name %>
+    <div id="error_explanation">
+      <ul class="list-group">
+        <% @log.errors.full_messages.each do |m| %>
+          <li class="alert alert-danger mb-2 fs-6 fw-bolder list-unstyled"><%= m %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div
+      data-controller='hello'
+      data-hello-target="john"
+    >
+    <%= render "form", log: @log %>
+  </div>
+<% end %>

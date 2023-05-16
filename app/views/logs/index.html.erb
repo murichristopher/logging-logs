@@ -1,0 +1,30 @@
+  <%# <div class="field">
+    <h1 data-hello-target="batata">Welcome to the Homepage!</h1>
+    <button class="text-white bg-blue-700 px-5 py-5"
+  data-controller='hello' data-action="click->hello#greet">Greet</button>  </div> %>
+
+<%= turbo_stream_from "logs" %>
+    <div class="header">
+      <h1>Logs</h1>
+      <%= turbo_frame_tag Log.new do%>
+      <% end %>
+    </div>
+
+  <div class='content'>
+        <div
+            data-controller="pagination"
+            data-pagination-target="posts"
+            data-pagination-url-value="<%= root_url %>"
+            data-pagination-page-value="<%= 2 %>"
+            class="d-flex flex-column align-items-center gap-4 logs-container"
+            >
+      <%= turbo_frame_tag 'logs', data: { 'pagination-target': 'targetObject'} do%>
+          <%= render @logs %>
+      <% end %>
+        </div>
+  </div>
+
+<style>
+
+
+</style>

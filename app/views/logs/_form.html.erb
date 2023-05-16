@@ -1,0 +1,9 @@
+<%= form_with(model: log, class: "d-flex flex-wrap flex-column align-items-center", data: {controller: 'form'}) do |form| %>
+  <div class="mb-3 col-lg-3">
+    <%= form.label "Nome", class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+  <div class="d-grid col-lg-3">
+    <%= form.submit "Salvar", class: "btn btn-success mt-3" %>
+  </div>
+<% end %>

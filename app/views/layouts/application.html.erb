@@ -7,9 +7,21 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "custom" %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <main>
+      <%= yield %>
+
+      <% unless current_page?(root_path) %>
+      <%= link_to root_path do %>
+        <div class='back-button'>
+          <i class="bi bi-back"></i>
+        </div>
+      <% end %>
+      <% end %>
+    </main>
   </body>
 </html>

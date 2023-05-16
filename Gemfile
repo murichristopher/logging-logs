@@ -27,7 +27,18 @@ group :development, :test do
 end
 
 group :development do
+  gem 'foreman'
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
 
+
+gem 'stimulus-rails'
+gem 'turbo-rails'
+gem 'redis'
+gem 'webpacker', '~> 5.4'
+gem 'kaminari'
+gem 'pry'
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'rouge'

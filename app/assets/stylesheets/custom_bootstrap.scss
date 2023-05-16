@@ -1,0 +1,47 @@
+// Required
+@import "bootstrap/scss/functions";
+
+// Default variable overrides
+$primary: #cc37fd; // New color: green
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+
+  &:hover {
+    background-color: $primary;
+    opacity: 0.6;
+    border-color: $primary;
+  }
+}
+
+$text-input-types: "text", "password", "datetime", "datetime-local", "date",
+  "month", "time", "week", "number", "email", "url", "search", "tel", "color";
+
+:focus {
+  &.textarea,
+  &[type="text"],
+  &[type="password"],
+  &[type="datetime"],
+  &[type="datetime-local"],
+  &[type="date"],
+  &[type="month"],
+  &[type="time"],
+  &[type="week"],
+  &[type="number"],
+  &[type="email"],
+  &[type="url"],
+  &[type="search"],
+  &[type="tel"],
+  &[type="color"],
+  &.uneditable-input {
+    border-color: $primary;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.0695) inset, 0 0 8px $primary;
+    outline: 0 none;
+  }
+}

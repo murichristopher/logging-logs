@@ -1,0 +1,9 @@
+<%= turbo_stream.append "logs" do %>
+  <%= render @logs do %>
+    <h1>oiii</h1>
+  <% end %>
+<% end %>
+
+<% if @logs.last_page? %>
+  <div id="no-more-records" style="display:none;"></div>
+<% end %>

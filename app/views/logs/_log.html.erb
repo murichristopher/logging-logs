@@ -1,0 +1,28 @@
+<%= turbo_frame_tag log do%>
+  <%= link_to log, data: { turbo_frame: '_top'} do %>
+    <div class="card card-log">
+      <div class="card-body">
+        <div class="card-title">
+          <h5>
+            <%= log.name %>
+          </h5>
+
+          <span>
+            <h6>
+              <%= formatted_time(log.created_at) %>
+              <i class="bi bi-clock-history fa-xs" style="font-size: 0.8rem;"></i>
+            </h6>
+          </span>
+        </div>
+
+        <p class="card-text">
+          Output: <%= truncate(log.output, 100) %>
+          <br />
+          <span>
+            <%# <%= log.project_name %>
+          </span>
+        </p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
